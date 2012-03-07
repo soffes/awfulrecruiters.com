@@ -1,6 +1,6 @@
 # Awful Recruiters
 
-Recruiters suck. I want less worthless email.
+I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.
 
 ## Running Locally
 
