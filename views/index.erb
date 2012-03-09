@@ -1,76 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Awful Recruiters</title>
-    <link rel="me" href="http://www.google.com/profiles/samsoffes" />
-    <link href="/style.css" media="screen" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <h1>Awful Recruiters</h1>
-    </header>
-    <section>
-      <p>I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.</p>
-      <h3>Awful Third-Party Recruiters</h3>
-      <p>I strongly dislike third-party recruiters. All email I have recieved from this list is crap. "Exciting opportunities" for positions I am wildly unqualitified for or recruiting companies that I have asked to stop emailing me but keep following up anyway. (There might be a few real companies mixed in that I would never want to work for. I'll get them moved out at some point.)</p>
-      <pre>
-workbridgeassociates.com
-vtrit.com
-jsgeeks.com
-questgroups.com
-identified.com
-sysdevit.com
-kbretz.com
-brightonsearchgroup.com
-trajectory.us.com
-peakrecruit.com
-turner.com
-surrex.com
-strategic-staffing.com
-encoress.com
-kforce.com
-epro-consulting.com
-resourcis.com
-bravotech.com
-aplussearch.com
-kutirtech.com
-thebackplane.com
-sptechpartners.com
-aimconsulting.com
-jobspringpartners.com
-axiustek.com
-lumoslabs.com
-rivierapartners.com
-omegasolutioninc.com
-good.com
-marlabs.com
-silversearchinc.com
-ownpointofsale.com
-talent4now.com
-clearslide.com
-xcreek.com
-disys.com
-jinibot.com
-avanitechsolutions.com
-</pre>
+<p>I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.</p>
+<h3>Awful Third-Party Recruiters</h3>
+<p>I strongly dislike third-party recruiters. All email I have recieved from this list is crap. "Exciting opportunities" for positions I am wildly unqualitified for or recruiting companies that I have asked to stop emailing me but keep following up anyway. (There might be a few real companies mixed in that I would never want to work for. I'll get them moved out at some point.)</p>
+<pre><% recruiters['thirdparty'].each do |domain| %>
+<%= domain %>
+<% end %></pre>
 
-      <h3>More Sources of Recruiter Email</h3>
-      <p>Personally, I don't want any email from these domains either. I can understand how some might though.</p>
-<pre>
-githire.com
-linkedin.com
-</pre>
+<h3>Undesirable Companies</h3>
+<p>I've gotten really poor recruiter emails from these domains. I'd rather not receive any more from them.</p>
+<pre><% recruiters['companies'].each do |domain| %>
+<%= domain %>
+<% end %></pre>
 
-      <h3>Gmail Filter</h3>
-      <p>Here is the search I use for my Gmail filter. I have my filter label them <code>recuiter</code>, never mark as important, and archive it. (Scroll left and right. It's long.)</p>
-      <pre>
-*@workbridgeassociates.com OR *@vtrit.com OR *@jsgeeks.com OR *@questgroups.com OR *@identified.com OR *@sysdevit.com OR *@kbretz.com OR *@brightonsearchgroup.com OR *@trajectory.us.com OR *@peakrecruit.com OR *@turner.com OR *@surrex.com OR *@strategic-staffing.com OR *@encoress.com OR *@kforce.com OR *@epro-consulting.com OR *@resourcis.com OR *@bravotech.com OR *@aplussearch.com OR *@kutirtech.com OR *@thebackplane.com OR *@sptechpartners.com OR *@aimconsulting.com OR *@jobspringpartners.com OR *@axiustek.com OR *@lumoslabs.com OR *@rivierapartners.com OR *@omegasolutioninc.com OR *@good.com OR *@marlabs.com OR *@silversearchinc.com OR *@ownpointofsale.com OR *@talent4now.com OR *@githire.com OR *@linkedin.com OR *@clearslide.com OR *@xcreek.com OR *@disys.com OR *@jinibot.com OR *@avanitechsolutions.com
-</pre>
-    </section>
-    <footer>
-      <p>Created by <a href="http://samsoff.es/" rel="external nofollow">Sam Soffes</a>. <a href="https://github.com/samsoffes/awfulrecruiters.com" rel="external nofollow">View source on GitHub</a>.</p>
-    </footer>
-    <script type="text/javascript">var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','4f57bbe1f5a1f50375000176');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t, s);})();</script>
-  </body>
-</html>
+<h3>More Sources of Recruiter Email</h3>
+<p>Personally, I don't want any email from these domains either. I can understand how some might though.</p>
+<pre><% recruiters['other'].each do |domain| %>
+<%= domain %>
+<% end %></pre>
+
+<h3>Gmail Filter</h3>
+<p>Here is the search I use for my Gmail filter. I have my filter label them <code>recuiter</code>, never mark as important, and archive it. (Scroll left and right. It's long.)</p>
+<pre><%= filter %></pre>

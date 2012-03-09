@@ -9,6 +9,6 @@ Simply run the following commands:
     $ git clone https://github.com/samsoffes/awfulrecruiters.com.git
     $ cd awfulrecruiters.com
     $ bundle install
-    $ bundle exec rackup config.ru
+    $ bundle exec shotgun config.ru
 
 Enjoy.
