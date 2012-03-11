@@ -1,22 +1,33 @@
+set :cache, Dalli::Client.new
+
 def recruiters
-  @recruiters ||= YAML.load_file('recruiters.yml')
+  @recruiters ||= settings.cache.get('recruiters')
+  unless @recruiters
+    loaded = YAML.load_file('recruiters.yml')
+    settings.cache.set('recruiters', loaded)
+    @recruiters = loaded
+  end
+  @recruiters
 end
 
-def build_filter(domains)
-  domains.map{|domain| "*@#{domain}"}.join(' OR ')
+def filter
+  @filter ||= settings.cache.get('filter')
+  unless @filter
+    f = recruiters.values.flatten.map { |domain| "*@#{domain}" }.join(' OR ')
+    settings.cache.set('filter', f)
+    @filter = f
+  end
+  @filter
 end
 
 get '/' do
-  filter = build_filter(recruiters.values.flatten)
   erb :index, locals: { recruiters: recruiters, filter: filter }
 end
 
-get '/gmail' do
-  headers({
+get '/gmail.xml' do
+  headers(
     'Content-Type' => 'application/force-download; charset=utf-8',
-    'Content-Disposition' => 'attachment; filename=recruiter_filter.xml'
-  })
-  erb :gmail,
-      locals: { filter: build_filter(recruiters.values.flatten) },
-      layout: false
+    'Content-Disposition' => 'attachment; filename=awful-recruiters-filter.xml'
+  )
+  erb :gmail, locals: { filter: filter }, layout: false
 end
