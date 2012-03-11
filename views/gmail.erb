@@ -1,0 +1,18 @@
+<% time = Time.now.utc.iso8601 %>
+<?xml version='1.0' encoding='UTF-8'?><feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+	<title>Mail Filters</title>
+  <updated><%= time %></updated>
+	<author>
+		<name>awfulrecruiters.com</name>
+	</author>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+    <updated><%= time %></updated>
+		<content></content>
+    <apps:property name='from' value='<%= filter %>'/>
+		<apps:property name='label' value='recruiters'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldNeverMarkAsImportant' value='true'/>
+	</entry>
+</feed>
