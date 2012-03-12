@@ -5,7 +5,6 @@ thirdparty:
   - axiustek.com
   - bravotech.com
   - brightonsearchgroup.com
-  - clearslide.com
   - disys.com
   - encoress.com
   - epro-consulting.com
@@ -38,6 +37,8 @@ thirdparty:
   - workbridgeassociates.com
   - xcreek.com
 companies:
+  - clearslide.com
+  - clearslidemail.com
   - good.com
   - lumoslabs.com
 other:
