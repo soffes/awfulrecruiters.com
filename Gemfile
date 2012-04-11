@@ -1,8 +1,9 @@
 source :rubygems
 
 gem 'sinatra'
-gem 'dalli'
 gem 'rake'
+gem 'dalli'
+gem 'thin'
 
 group :development do
   gem 'shotgun'
