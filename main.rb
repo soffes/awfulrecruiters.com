@@ -17,7 +17,8 @@ def filters
     @filters = []
     f.each_slice(40).to_a.each do |fs|
       @filters << fs.map { |domain| "*@#{domain}" }.join(' OR ')
-    end    
+    end
+    @filters = @filters.join("\n\n")
     settings.cache.set('filter', @filters)
   end
   @filters
