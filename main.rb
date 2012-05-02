@@ -11,7 +11,7 @@ def recruiters
 end
 
 def filters
-  @filters ||= settings.cache.get('filter')
+  @filters ||= settings.cache.get('filters')
   unless @filters
     f = recruiters.values.flatten
     @filters = []
@@ -19,7 +19,7 @@ def filters
       @filters << fs.map { |domain| "*@#{domain}" }.join(' OR ')
     end
     @filters = @filters.join("\n\n")
-    settings.cache.set('filter', @filters)
+    settings.cache.set('filters', @filters)
   end
   @filters
 end
@@ -28,10 +28,10 @@ get '/' do
   erb :index, locals: { recruiters: recruiters, filters: filters }
 end
 
-get '/gmail.xml' do
-  headers(
-    'Content-Type' => 'application/force-download; charset=utf-8',
-    'Content-Disposition' => 'attachment; filename=awful-recruiters-filter.xml'
-  )
-  erb :gmail, locals: { filter: filter }, layout: false
-end
+# get '/gmail.xml' do
+#   headers(
+#     'Content-Type' => 'application/force-download; charset=utf-8',
+#     'Content-Disposition' => 'attachment; filename=awful-recruiters-filter.xml'
+#   )
+#   erb :gmail, locals: { filters: filters }, layout: false
+# end
