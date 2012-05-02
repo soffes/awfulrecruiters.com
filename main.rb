@@ -10,18 +10,21 @@ def recruiters
   @recruiters
 end
 
-def filter
-  @filter ||= settings.cache.get('filter')
-  unless @filter
-    f = recruiters.values.flatten.map { |domain| "*@#{domain}" }.join(' OR ')
-    settings.cache.set('filter', f)
-    @filter = f
+def filters
+  @filters ||= settings.cache.get('filter')
+  unless @filters
+    f = recruiters.values.flatten
+    @filters = []
+    f.each_slice(40).to_a.each do |fs|
+      @filters << fs.map { |domain| "*@#{domain}" }.join(' OR ')
+    end    
+    settings.cache.set('filter', @filters)
   end
-  @filter
+  @filters
 end
 
 get '/' do
-  erb :index, locals: { recruiters: recruiters, filter: filter }
+  erb :index, locals: { recruiters: recruiters, filters: filters }
 end
 
 get '/gmail.xml' do
