@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'sinatra'
+gem 'sinatra', require: false
 gem 'rake'
 gem 'dalli'
 gem 'thin'

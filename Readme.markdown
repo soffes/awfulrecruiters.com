@@ -11,6 +11,6 @@ Simply run the following commands:
     $ git clone https://github.com/samsoffes/awfulrecruiters.com.git
     $ cd awfulrecruiters.com
     $ bundle install
-    $ bundle exec shotgun config.ru
+    $ bundle exec shotgun
 
 Enjoy.

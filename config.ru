@@ -2,6 +2,6 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require 'time'
+require 'sinatra'
 require './main'
 run Sinatra::Application

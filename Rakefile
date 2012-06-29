@@ -14,5 +14,5 @@ task :clean do
     filters << fs.map { |domain| "*@#{domain}" }.join(' OR ')
   end
   filters = filters.join("\n\n")
-  settings.cache.set('filters', filters)
+  cache.set('filters', filters)
 end
