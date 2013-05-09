@@ -16,8 +16,8 @@
     <footer>
       <p>Created by <a href="http://soff.es/" rel="external nofollow">Sam Soffes</a>. <a href="https://github.com/soffes/awfulrecruiters.com" rel="external nofollow">View source on GitHub</a>.</p>
     </footer>
-    <% if production? %>
-    <script type="text/javascript">var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','4f57bbe1f5a1f50375000176');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t, s);})();</script>
+    <% if ENV['RACK_ENV'] == 'production' %>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-5609322-14','awfulrecruiters.com');ga('send','pageview');</script>
     <% end %>
   </body>
 </html>
