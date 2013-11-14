@@ -10,7 +10,6 @@ GEM
       rack (~> 1.0)
     rack-protection (1.5.1)
       rack
-    rake (10.1.0)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
@@ -25,6 +24,5 @@ PLATFORMS
 DEPENDENCIES
   puma
   rack-canonical-host
-  rake
   shotgun
   sinatra
