@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 
-require 'sinatra'
-require './main'
-run Sinatra::Application
+use Rack::CanonicalHost, ENV['CANONICAL_HOST'] if ENV['CANONICAL_HOST']
+
+require './awful'
+run AwfulRecruiters
