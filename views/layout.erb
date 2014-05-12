@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Awful Recruiters</title>
-    <link rel="me" href="http://www.google.com/profiles/samsoffes" />
-    <link href="/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="me" href="http://www.google.com/profiles/samsoffes">
+    <link href="/style.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header>
@@ -14,10 +14,10 @@
       <%= yield %>
     </section>
     <footer>
-      <p>Created by <a href="http://samsoff.es/" rel="external nofollow">Sam Soffes</a>. <a href="https://github.com/samsoffes/awfulrecruiters.com" rel="external nofollow">View source on GitHub</a>.</p>
+      <p>Created by <a href="http://soff.es/" rel="external nofollow">Sam Soffes</a>. <a href="https://github.com/soffes/awfulrecruiters.com" rel="external nofollow">View source on GitHub</a>.</p>
     </footer>
-    <% if production? %>
-    <script type="text/javascript">var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','4f57bbe1f5a1f50375000176');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t, s);})();</script>
+    <% if ENV['RACK_ENV'] == 'production' %>
+    <script>var _gauges=_gauges||[];(function(){var t=document.createElement('script');t.async=true;t.id='gauges-tracker';t.setAttribute('data-site-id','52850de6108d7b1ec600001d');t.src='//secure.gaug.es/track.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(t,s);})();</script>
     <% end %>
   </body>
 </html>

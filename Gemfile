@@ -1,11 +1,11 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'sinatra', require: false
-gem 'rake'
-gem 'dalli'
-gem 'thin'
+ruby '2.0.0'
+
+gem 'sinatra'
+gem 'puma'
+gem 'rack-canonical-host'
 
 group :development do
   gem 'shotgun'
-  gem 'heroku'
 end
