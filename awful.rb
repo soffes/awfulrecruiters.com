@@ -1,4 +1,13 @@
+require 'sinatra'
+require 'safe_yaml'
+
 class AwfulRecruiters < Sinatra::Application
+  configure do
+    set :root, File.dirname(__FILE__)
+    set :views, Proc.new { File.join(root, 'views') }
+    SafeYAML::OPTIONS[:default_mode] = :safe
+  end
+
   get '/' do
     erb :index, locals: { recruiters: recruiters, filters: filters }
   end
@@ -6,7 +15,7 @@ class AwfulRecruiters < Sinatra::Application
   private
 
   def recruiters
-    @recruiters ||= YAML.load_file('recruiters.yml')
+    @recruiters ||= YAML.load_file(File.join(settings.root, 'recruiters.yml'))
   end
 
   def filters
