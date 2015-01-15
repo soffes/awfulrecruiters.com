@@ -7,5 +7,5 @@ gem 'puma'
 gem 'rack-canonical-host'
 
 group :development do
-  gem 'shotgun'
+  gem 'foreman'
 end
