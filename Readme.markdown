@@ -8,9 +8,11 @@ If your company's domain is on this list and you feel it is there by mistake, se
 
 Simply run the following commands:
 
-    $ git clone https://github.com/samsoffes/awfulrecruiters.com.git
+    $ git clone https://github.com/soffes/awfulrecruiters.com
     $ cd awfulrecruiters.com
     $ bundle install
-    $ bundle exec shotgun
+    $ bundle exec foreman start
+
+Then open <http://localhost:5000> in your favorite browser.
 
 Enjoy.

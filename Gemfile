@@ -1,11 +1,18 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.0'
 
-gem 'sinatra'
-gem 'puma'
+gem 'sinatra', require: false
+gem 'puma', require: false
 gem 'rack-canonical-host'
+gem 'safe_yaml'
 
 group :development do
-  gem 'shotgun'
+  gem 'foreman'
+end
+
+group :test do
+  gem 'minitest'
+  gem 'rack-test'
+  gem 'rake'
 end
