@@ -1,0 +1,7 @@
+exclude:
+  - Readme.markdown
+  - Contributing.markdown
+  - .travis.yml
+  - .gitignore
+  - package.json
+  - LICENSE

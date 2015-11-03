@@ -1,0 +1,29 @@
+{
+  "name": "awfulrecruiters.com",
+  "version": "1.0.0",
+  "description": "I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.",
+  "scripts": {
+    "test": "./node_modules/js-yaml/bin/js-yaml.js -t _data/recruiters.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soffes/awfulrecruiters.com.git"
+  },
+  "author": {
+    "name": "Sam Soffes",
+    "email": "sam@soff.es",
+    "url": "http://soff.es/"
+  },
+  "contributors": [{
+    "name": "Nathan Smith",
+    "url": "http://sonspring.com/"
+  }],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soffes/awfulrecruiters.com/issues"
+  },
+  "homepage": "https://github.com/soffes/awfulrecruiters.com#readme",
+  "dependencies": {
+    "js-yaml": "^3.4.3"
+  }
+}
