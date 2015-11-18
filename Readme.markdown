@@ -10,9 +10,9 @@ Simply run the following commands:
 
     $ git clone https://github.com/soffes/awfulrecruiters.com
     $ cd awfulrecruiters.com
-    $ bundle install
-    $ bundle exec foreman start
+    $ gem install jekyll
+    $ jekyll serve --watch
 
-Then open <http://localhost:5000> in your favorite browser.
+Then open <http://localhost:4000> in your favorite browser.
 
 Enjoy.

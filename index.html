@@ -1,17 +1,37 @@
+---
+layout: default
+title: aw
+---
+{%comment%}
+We capture newline to a variable so we can reuse it elsewhere easily
+{%endcomment%}
+{% capture newline %}
+{% endcapture %}
+
 <p>I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.</p>
 
 <p class="light">Disclaimer: I am definitely not saying these companies are awful. Simply that they are a source of undesirable email. This site is simply a list of domains. No claims are being made about the owners or their intentions.</p>
 
 <h2>Gmail Filter</h2>
 <p>Here is the search I use for my Gmail filter. I have my filter label them <code>recruiter</code>, never mark as important, and archive it. Gmail has a maximum search length so they are separated by new lines. (Scroll left and right. They're long.)</p>
-<pre><%= filters %></pre>
+{% assign recruiters = site.data.recruiters.thirdparty | concat: site.data.recruiters.other %}
+
+{%comment%}
+The following loop is tricky and needs to be written without any whitespace
+because we are inside a pre tag where this matters. We calculate the modulo,
+store it in a variable and show a suffix or newline depending on the result
+{%endcomment%}
+
+<pre>
+{% for domain in recruiters | sort %}{% capture m %}{{forloop.index|modulo:40}}{% endcapture %}*@{{domain}}{% if m == '0' %}{{newline}}{% else %} OR {% endif %}{% endfor %}</pre>
 
 <h3>Third-Party Recruiters</h3>
 <p>I strongly dislike third-party recruiters. Many of these have sent me "Exciting opportunities" for positions I am wildly unqualified for or recruiting companies that I have asked to stop emailing me but keep following up anyway. (There might be a few real companies mixed in. If you spot one, please let me know.)</p>
-<pre><%= recruiters['thirdparty'].join("\n") %></pre>
+
+<pre>{{site.data.recruiters.thirdparty | join: newline}}</pre>
 
 <h3>More Sources of Recruiter Email</h3>
 <p>Personally, I don't want any email from these domains either. I can understand how some might though.</p>
-<pre><%= recruiters['other'].join("\n") %></pre>
+<pre>{{site.data.recruiters.other | join: newline}}</pre>
 
 <p class="light">If your company's domain is on this list and you feel it is there by mistake, send me a pull request explaining why you feel it is a mistake and I will consider merging it. If your company's domain is in the third-party recruiters category and you are a third-party recruiter, then it is not a mistake that you are on this list.</p>
