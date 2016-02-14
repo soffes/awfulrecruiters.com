@@ -6,6 +6,7 @@ GEM
     foreman (0.77.0)
       dotenv (~> 1.0.2)
       thor (~> 0.19.1)
+    json (1.8.3)
     minitest (5.4.3)
     puma (2.10.2)
       rack (>= 1.1, < 2.0)
@@ -31,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   foreman
+  json (~> 1.8, >= 1.8.3)
   minitest
   puma
   rack-canonical-host
@@ -38,3 +40,6 @@ DEPENDENCIES
   rake
   safe_yaml
   sinatra
+
+BUNDLED WITH
+   1.11.2
