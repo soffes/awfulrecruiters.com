@@ -6,6 +6,7 @@ gem 'sinatra', require: false
 gem 'puma', require: false
 gem 'rack-canonical-host'
 gem 'safe_yaml'
+gem 'json', '~> 1.8', '>= 1.8.3'
 
 group :development do
   gem 'foreman'

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'safe_yaml'
+require 'json'
 
 class AwfulRecruiters < Sinatra::Application
   configure do
@@ -9,7 +10,18 @@ class AwfulRecruiters < Sinatra::Application
   end
 
   get '/' do
-    erb :index, locals: { recruiters: recruiters, filters: filters }
+    request.accept.each do |type|
+      case type.to_s
+      when 'text/html'
+        halt erb :index, locals: { recruiters: recruiters, filters: filters }
+      when 'text/json', 'application/json'
+        json_data = {
+          recruiters: recruiters,
+          filters: filters.split("\n\n")
+        }
+        halt json_data.to_json
+      end
+    end
   end
 
   private
