@@ -9,8 +9,7 @@ html {
 
 body,input,textarea {
   color: #222;
-  font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: sans-serif;
   font-size: 17px;
   line-height: 1.5em;
 }
