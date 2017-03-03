@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.3.3'
 
-gem 'sinatra', require: false
+gem 'sinatra'
 gem 'puma', require: false
 gem 'rack-canonical-host'
 gem 'safe_yaml'

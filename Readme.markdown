@@ -1,18 +1,7 @@
 # Awful Recruiters
 
-I'm starting to compile a list of domains of recruiters. The goal is to get less email that I would never read anyway.
+This used to be a list of third party recruiters. This was on the website:
 
-If your company's domain is on this list and you feel it is there by mistake, send me a pull request explaining why you feel it is a mistake and I will consider merging it.
+> I am definitely not saying these companies are awful. Simply that they are a source of undesirable email. This site is simply a list of domains. No claims are being made about the owners or their intentions.
 
-## Running Locally
-
-Simply run the following commands:
-
-    $ git clone https://github.com/soffes/awfulrecruiters.com
-    $ cd awfulrecruiters.com
-    $ bundle install
-    $ bundle exec foreman start
-
-Then open <http://localhost:5000> in your favorite browser.
-
-Enjoy.
+Ideally, it was just a list of third-party recruiters. "Awful" was intended to be humorous. Some people over reacted a bit. Instead of constantly trying to explain myself, I think it's best to just remove the list. The whole point was to get less email. It's easier to ignore irrelevant job emails than empty legal threats.
