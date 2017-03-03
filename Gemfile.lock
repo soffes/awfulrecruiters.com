@@ -17,7 +17,6 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (12.0.0)
-    safe_yaml (1.0.4)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -35,7 +34,6 @@ DEPENDENCIES
   rack-canonical-host
   rack-test
   rake
-  safe_yaml
   sinatra
 
 RUBY VERSION
